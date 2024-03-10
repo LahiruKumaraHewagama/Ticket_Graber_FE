@@ -9,6 +9,8 @@ import { Header } from "../components/header";
 import { JsonData } from "../data/Data";
 import axios from 'axios';
 
+import "./../index.css"
+
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
@@ -76,6 +78,7 @@ const Home = () => {
           <ErrorPage />
           :
           <div>
+
             <Navigation data={"True"}/>
             <Header data={landingPageData.Header} />
           

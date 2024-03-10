@@ -7,6 +7,7 @@ import SmoothScroll from "smooth-scroll";
 import authConfig from "../config.json";
 import { JsonData } from "../data/Data";
 import { useAuthContext } from "@asgardeo/auth-react";
+import Navbar from "../components/navbar";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -39,7 +40,8 @@ const LandingPage = () => {
           <ErrorPage />
           :
           <div>
-            <Navigation data={"False"} />
+            <Navbar />
+            {/* <Navigation data={"False"} /> */}
             <Header data={landingPageData.Header} />           
           </div>
       }
