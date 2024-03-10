@@ -18,7 +18,7 @@ export const Header = (props:any) => {
                 <p>{props.data ? props.data.paragraph : 'Loading'}</p>
                 <Searchbar/>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
