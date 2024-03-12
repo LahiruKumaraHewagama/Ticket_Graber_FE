@@ -16,28 +16,27 @@
  * under the License.
  */
 
-module.exports = {
-    env: {
-        test: {
-            plugins: ["@babel/plugin-transform-modules-commonjs"]
-        }
-    },
-    plugins: [
-        ["@babel/plugin-proposal-decorators", { "legacy": true }],
-        "@babel/plugin-proposal-class-properties"
-    ],
-    presets: [
-        [
-            "@babel/preset-env",
-            {
-                corejs: {
-                    proposals: true,
-                    version: "3.6"
-                },
-                useBuiltIns: "entry"
-            }
-        ],
-        "@babel/preset-typescript",
-        "@babel/preset-react"
-    ]
+import React, { FunctionComponent, ReactElement } from "react";
+import { useNavigate } from "react-router-dom";
+import { DefaultLayout } from "../layouts/default";
+
+/**
+ * Page to display for 404.
+ *
+ * @param props - Props injected to the component.
+ *
+ * @return {React.ReactElement}
+ */
+export const NotFoundPage: FunctionComponent = (): ReactElement => {
+
+    const navigate = useNavigate();
+
+    return (
+        <DefaultLayout>
+            <h3>
+                404: Page not found
+            </h3>
+            <button className="btn primary" onClick={() => { navigate("/home") }}>Go back to home</button>
+        </DefaultLayout>
+    );
 };
